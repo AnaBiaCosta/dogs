@@ -1,9 +1,15 @@
 import React from 'react'
+import {
+  Layout,
+  Header,
+  Footer
+} from '../../components'
 
-const Home = () => {
-  return (
-    <h1>Home</h1>
-  )
-}
+const Home = () => (
+  <Layout>
+    <Header />
+    <Footer />
+  </Layout>
+)
 
 export { Home }
