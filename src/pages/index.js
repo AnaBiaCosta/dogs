@@ -1,13 +1,9 @@
 import { Home } from './Home'
 import { Login } from './Login'
-import { LoginCreate } from './LoginCreate'
-import { LoginPasswordLost } from './LoginPasswordLost'
-import { LoginPasswordReset } from './LoginPasswordReset'
+import { User } from './User'
 
 export {
   Home,
   Login,
-  LoginCreate,
-  LoginPasswordLost,
-  LoginPasswordReset
+  User
 }

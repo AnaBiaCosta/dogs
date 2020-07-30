@@ -7,8 +7,7 @@ import {
 
 const Home = () => (
   <Layout>
-    <Header />
-    <Footer />
+
   </Layout>
 )
 

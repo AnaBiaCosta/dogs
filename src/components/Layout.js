@@ -4,20 +4,16 @@ import reset from 'styled-reset'
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:400,900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Spectral:wght@700&display=swap');
   box-sizing: border-box;
 
   body {
     color: #333;
     --type-first: Helvetica, Arial, sans-serif;
-    --type-second: 'Spectral', Georgia;
+    --type-second: 'Spectral', georgia;
     font-family: var(--type-first);
     width: 100%;
     padding-top: 4rem;
-  }
-
-  header {
-    max-width: 50rem;
   }
 
   img {
@@ -31,20 +27,32 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--type-first);
     color: #333;
   }
-`
 
-const Main = styled.main`
-  max-width: 50rem;
-  padding: 0 1rem;
-  margin: 0 auto;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  section {
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: animeLeft 0.3s forwards;
+  }
+
+  @keyframes animeLeft {
+    to {
+      opacity: 1;
+      transform: initial;
+    }
+  }
 `
 
 const Layout = ({ children }) => {
   return (
-    <Main>
+    <main>
       <GlobalStyle />
       { children }
-    </Main>
+    </main>
   )
 }
 

@@ -1,23 +1,32 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { UserStorage } from './UserContext'
 import {
   Home,
   Login,
-  LoginCreate,
-  LoginPasswordLost,
-  LoginPasswordReset
+  User 
 } from './pages'
+import {
+  Header,
+  Footer,
+  Layout,
+  ProtectedRoute
+} from './components'
 
 ReactDOM.render(
   <BrowserRouter>
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/login/criar" element={<LoginCreate />} />
-      <Route path="/login/senha-perdida" element={<LoginPasswordLost />} />
-      <Route path="/login/resetar-senha" element={<LoginPasswordReset />} />
-    </Routes>
+  <Layout>
+    <UserStorage>
+      <Header />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="login/*" element={<Login />} />
+        <ProtectedRoute path="conta/*" element={<User />} />
+      </Routes>
+      <Footer />
+    </UserStorage>
+  </Layout>
   </BrowserRouter>,
   document.getElementById('root')
 )

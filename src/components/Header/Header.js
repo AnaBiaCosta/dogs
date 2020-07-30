@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { UserContext } from '../../UserContext'
 import { ReactComponent as Brand } from '../../assets/dogs.svg'
 import { ReactComponent as User } from '../../assets/usuario.svg'
 import {
@@ -8,6 +9,8 @@ import {
 } from './Header.style'
 
 const Header = () => {
+  const { data, userLogout } = useContext(UserContext)
+
   return (
     <HeaderNav>
       <Nav>
@@ -15,12 +18,23 @@ const Header = () => {
           <Brand />
         </Link>
         <Link to="/">Home</Link>
-        <Link to="/login">
-          <span>
-            Login / Criar
-            <User />
-          </span>
-        </Link>
+
+        { data ? (
+          <Link to="/conta">
+            <span>
+              { data.nome }
+              <User />
+            </span>
+            <button onClick={userLogout}>Sair</button>  
+          </Link>
+        ) : (
+          <Link to="/login">
+            <span>
+              Login / Cadastro
+              <User />
+            </span>
+          </Link>
+        )}
     </Nav>
     </HeaderNav>
   )

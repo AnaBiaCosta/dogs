@@ -1,15 +1,19 @@
+import { Layout } from './Layout'
 import { Header } from './Header'
 import { Footer } from './Footer'
-import { Layout } from './Layout'
-import { LoginForm } from './LoginForm'
 import { Button } from './Button'
 import { Input } from './Input'
+import { Title } from './Title'
+import { Error } from './Error'
+import { ProtectedRoute } from './ProtectedRoute'
 
 export {
   Layout,
   Header,
   Footer,
-  LoginForm,
   Button,
-  Input
+  Input,
+  Title,
+  Error,
+  ProtectedRoute
 }

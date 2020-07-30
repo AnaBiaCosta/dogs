@@ -20,6 +20,7 @@ export const InputForm = styled.input`
   border-radius: 0.4rem;
   background-color: #EEE;
   transition: 0.2s;
+  box-sizing: border-box;
 
   :focus, :hover {
     outline: none;

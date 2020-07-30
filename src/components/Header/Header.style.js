@@ -14,6 +14,9 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   height: 4rem;
+  max-width: 50rem;
+  padding: 0 1rem;
+  margin: 0 auto;
 
   a {
     text-decoration: none;
